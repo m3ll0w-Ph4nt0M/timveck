@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT Business English Training by TimVeck - TEFL Certified Tech Professional with 10+ Years Experience. Communication training for developers, engineers, and IT professionals seeking career advancement.">
+    <meta name="keywords" content="IT Business English, developer communication, tech professional English, TEFL certified, career coaching for developers, technical English training">
+    <meta name="author" content="TimVeck">
+    <meta property="og:title" content="TimVeck - IT Business English Training Academy">
+    <meta property="og:description" content="English for Tech Pros - By a Tech Pro. Learn the business language of technology from someone who's written the code and taught the teams.">
+    <meta property="og:type" content="website">
+    <title>TimVeck - IT Business English Training | English for Tech Pros</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --imperial-dark: #3a4554;
+            --imperial-slate: #4f5d6f;
+            --imperial-gray: #7a8a9d;
+            --imperial-light-gray: #b8c5d6;
+            --imperial-accent: #8fa3ba;
+            --imperial-bright: #e8ecf1;
+            --imperial-white: #f5f7fa;
+            --imperial-blue: #6b8caf;
+
+            --imperial-dark: #121315;
+            --imperial-slate: #2d3035;
+            --imperial-gray: #9da7a6; 
+            --imperial-light-gray: #e3eae5;
+            --imperial-accent: #4a5fd4;
+            --imperial-bright: #f8faf9;
+            --imperial-white: #fff;
+            --imperial-blue: #3c4ba0; 
+            
+            --imperial-red: #c84b4b;
+            --spacing-unit: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--imperial-white);
+            color: var(--imperial-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Geometric Background Pattern - Diamond Grid */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, var(--imperial-bright) 48%, var(--imperial-bright) 52%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, var(--imperial-bright) 48%, var(--imperial-bright) 52%, transparent 52%);
+            background-size: 80px 80px;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 3);
+        }
+        
+        /* Header */
+        header {
+            padding: calc(var(--spacing-unit) * 4) 0;
+            border-bottom: 3px solid var(--imperial-slate);
+            background: linear-gradient(to bottom, var(--imperial-white), rgba(245, 247, 250, 0.98));
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.8s ease-out;
+            box-shadow: 0 4px 20px rgba(58, 69, 84, 0.1);
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 3);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            filter: drop-shadow(0 0 10px rgba(74, 111, 165, 0.3));
+        }
+        
+        .brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--imperial-dark);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            color: var(--imperial-blue);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: calc(var(--spacing-unit) * 1);
+            text-transform: uppercase;
+        }
+        
+        .cta-header {
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--imperial-slate);
+            background: transparent;
+            color: var(--imperial-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(143, 163, 186, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: var(--imperial-slate);
+            border-color: var(--imperial-dark);
+            color: var(--imperial-white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(58, 69, 84, 0.25);
+        }
+        
+        .btn-primary {
+            background: var(--imperial-slate);
+            border-color: var(--imperial-slate);
+            color: var(--imperial-white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--imperial-dark);
+            border-color: var(--imperial-dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: calc(var(--spacing-unit) * 15) 0 calc(var(--spacing-unit) * 12) 0;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--imperial-white) 0%, var(--imperial-bright) 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), 0 100%);
+            margin-bottom: calc(var(--spacing-unit) * 10);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 400px;
+            background: radial-gradient(ellipse at center, rgba(107, 140, 175, 0.12), transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            color: var(--imperial-dark);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.2;
+            animation: heroTitle 1.2s ease-out;
+        }
+        
+        @keyframes heroTitle {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 .highlight {
+            color: var(--imperial-blue);
+            display: block;
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--imperial-gray);
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            font-weight: 400;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: heroSubtitle 1.2s ease-out 0.2s both;
+        }
+        
+        @keyframes heroSubtitle {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: heroCta 1.2s ease-out 0.4s both;
+        }
+        
+        @keyframes heroCta {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Credentials Bar */
+        .credentials {
+            padding: calc(var(--spacing-unit) * 8) 0;
+            background: var(--imperial-slate);
+            border-top: 3px solid var(--imperial-dark);
+            border-bottom: 3px solid var(--imperial-dark);
+            clip-path: polygon(0 0, 100% 40px, 100% 100%, 0 calc(100% - 40px));
+            margin-top: calc(var(--spacing-unit) * -10);
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            text-align: center;
+        }
+        
+        .credential-item {
+            padding: calc(var(--spacing-unit) * 3);
+            transition: transform 0.3s ease;
+        }
+        
+        .credential-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .credential-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--imperial-white);
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+        
+        .credential-label {
+            font-size: 1.1rem;
+            color: var(--imperial-bright);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+        
+        /* Value Proposition */
+        .value-prop {
+            padding: calc(var(--spacing-unit) * 12) 0;
+            background: var(--imperial-white);
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 8);
+            color: var(--imperial-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--imperial-slate);
+            margin: calc(var(--spacing-unit) * 3) auto 0;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, var(--imperial-bright), var(--imperial-white));
+            padding: calc(var(--spacing-unit) * 4);
+            border: 2px solid var(--imperial-gray);
+            clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(79, 93, 111, 0.08));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--imperial-slate);
+            box-shadow: 0 10px 30px rgba(58, 69, 84, 0.15);
+        }
+        
+        .value-card:hover::before {
+            opacity: 1;
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--imperial-blue);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            display: inline-block;
+        }
+        
+        .value-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--imperial-dark);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .value-card p {
+            color: var(--imperial-gray);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Problem-Solution */
+        .problem-solution {
+            padding: calc(var(--spacing-unit) * 14) 0;
+            background: var(--imperial-bright);
+            border-top: 3px solid var(--imperial-gray);
+            border-bottom: 3px solid var(--imperial-gray);
+            clip-path: polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0 100%);
+            margin: calc(var(--spacing-unit) * 8) 0;
+        }
+        
+        .problem-solution-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem-box {
+            background: var(--imperial-white);
+            padding: calc(var(--spacing-unit) * 5);
+            margin-bottom: calc(var(--spacing-unit) * 5);
+            border: 3px solid var(--imperial-gray);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            box-shadow: 0 8px 25px rgba(58, 69, 84, 0.1);
+        }
+        
+        .problem-box h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--imperial-red);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .problem-box p {
+            font-size: 1.3rem;
+            color: var(--imperial-gray);
+            line-height: 1.8;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+        
+        .solution-box {
+            background: linear-gradient(135deg, var(--imperial-slate), var(--imperial-dark));
+            padding: calc(var(--spacing-unit) * 5);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            box-shadow: 0 8px 25px rgba(58, 69, 84, 0.25);
+        }
+        
+        .solution-box h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--imperial-white);
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .solution-box p {
+            font-size: 1.3rem;
+            color: var(--imperial-bright);
+            line-height: 1.8;
+        }
+        
+        /* Training Programs */
+        .programs {
+            padding: calc(var(--spacing-unit) * 12) 0;
+            background: var(--imperial-white);
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            margin-bottom: calc(var(--spacing-unit) * 8);
+        }
+        
+        .program-card {
+            background: var(--imperial-bright);
+            padding: calc(var(--spacing-unit) * 5);
+            border: 3px solid var(--imperial-gray);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, var(--imperial-slate), var(--imperial-dark));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            z-index: -1;
+        }
+        
+        .program-card:hover::before {
+            opacity: 1;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(58, 69, 84, 0.2);
+            border-color: transparent;
+        }
+        
+        .program-header {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            padding-bottom: calc(var(--spacing-unit) * 3);
+            border-bottom: 2px solid var(--imperial-gray);
+        }
+        
+        .program-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--imperial-dark);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .program-subtitle {
+            font-size: 1.1rem;
+            color: var(--imperial-blue);
+            font-weight: 500;
+        }
+        
+        .program-features {
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+        
+        .program-features li {
+            color: var(--imperial-gray);
+            font-size: 1.1rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            padding-left: calc(var(--spacing-unit) * 3);
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .program-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--imperial-slate);
+            font-size: 1.3rem;
+        }
+        
+        .program-cta {
+            text-align: center;
+        }
+        
+        /* Background Section */
+        .background {
+            padding: calc(var(--spacing-unit) * 14) 0;
+            background: var(--imperial-bright);
+            border-top: 3px solid var(--imperial-gray);
+            border-bottom: 3px solid var(--imperial-gray);
+            clip-path: polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0 100%);
+            margin: calc(var(--spacing-unit) * 8) 0;
+        }
+        
+        .background-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .background-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            margin-top: calc(var(--spacing-unit) * 6);
+        }
+        
+        .background-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            color: var(--imperial-slate);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .background-item ul {
+            list-style: none;
+        }
+        
+        .background-item li {
+            color: var(--imperial-gray);
+            font-size: 1.05rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            padding-left: calc(var(--spacing-unit) * 3);
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .background-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--imperial-blue);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: calc(var(--spacing-unit) * 15) 0;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--imperial-white) 0%, var(--imperial-bright) 100%);
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 300px;
+            background: radial-gradient(ellipse at center, rgba(79, 93, 111, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+        
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .final-cta h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--imperial-dark);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.3;
+        }
+        
+        .final-cta p {
+            font-size: 1.4rem;
+            color: var(--imperial-gray);
+            margin-bottom: calc(var(--spacing-unit) * 6);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            padding: calc(var(--spacing-unit) * 6) 0;
+            background: var(--imperial-slate);
+            border-top: 3px solid var(--imperial-dark);
+            text-align: center;
+        }
+        
+        footer p {
+            color: var(--imperial-bright);
+            font-size: 1rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+        
+        .footer-contact {
+            font-size: 1.1rem;
+            color: var(--imperial-white);
+            font-weight: 500;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .brand {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .programs-grid,
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a6fa5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%235a7cb3;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M200,50 L350,150 L350,250 L200,350 L50,250 L50,150 Z' fill='url(%23grad1)' stroke='%23e2e8f0' stroke-width='4'/%3E%3Cpath d='M200,80 L130,200 L270,200 Z' fill='%231a1f2e'/%3E%3Crect x='180' y='200' width='40' height='120' fill='%231a1f2e'/%3E%3C/svg%3E" alt="TimVeck Logo" class="logo">
+                    <div>
+                        <div class="brand">TimVeck</div>
+                        <div class="tagline">English for Tech Pros · By a Tech Pro</div>
+                    </div>
+                </div>
+                <div class="cta-header">
+                    <a href="#contact" class="btn btn-primary">Start Training</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>
+                        IT Business English Training Academy
+                        <span class="highlight">Communication That Advances Careers</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Learn the business language of technology from a developer who became a TEFL-certified trainer. 10+ years of tech experience meets proven teaching methods.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#programs" class="btn btn-primary">View Training Programs</a>
+                        <a href="#background" class="btn">My Background</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="credentials">
+            <div class="container">
+                <div class="credentials-grid">
+                    <div class="credential-item">
+                        <div class="credential-value">10+</div>
+                        <div class="credential-label">Years Tech Experience</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-value">TEFL</div>
+                        <div class="credential-label">Certified Trainer</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-value">NQF 7</div>
+                        <div class="credential-label">IT Degree</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-value">100%</div>
+                        <div class="credential-label">Tech-Focused</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="value-prop">
+            <div class="container">
+                <h2 class="section-title">What I Offer</h2>
+                <div class="value-grid">
+                    <div class="value-card">
+                        <div class="value-icon">💼</div>
+                        <h3>IT Business English</h3>
+                        <p>Technical vocabulary, email writing for developers, meeting language, and presentation skills for technical audiences. Cross-cultural communication for remote teams.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">📈</div>
+                        <h3>Career Advancement</h3>
+                        <p>Career coaching for IT professionals, interview preparation with technical scenarios, CV and LinkedIn optimization for developers and engineers.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">👥</div>
+                        <h3>Team Training</h3>
+                        <p>Communication workshops for development teams. Learn to shift from technical to professional English in team settings and client interactions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="problem-solution">
+            <div class="container">
+                <div class="problem-solution-content">
+                    <div class="problem-box">
+                        <h3>The Problem</h3>
+                        <p>Most IT professionals struggle not because they lack technical ability, but because they cannot communicate that ability effectively to non-technical stakeholders, clients, or interviewers.</p>
+                        <p>Traditional English teachers have teaching degrees but zero tech experience. They teach generic business phrases from textbooks and cannot relate to developer frustrations.</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>The Solution</h3>
+                        <p>I bridge this gap by teaching the business language of technology. My background gives me credibility with technical audiences.</p>
+                        <p>I have written the code, managed the databases, troubleshot the bugs, and dealt with the clients. I know what developers face daily, and I know how to teach the communication skills that will set them apart.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="programs" class="programs">
+            <div class="container">
+                <h2 class="section-title">Training Programs</h2>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3 class="program-name">Essentials</h3>
+                            <p class="program-subtitle">Daily Communication for Tech Professionals</p>
+                        </div>
+                        <ul class="program-features">
+                            <li>Scenario-based IT Business English for real-world tech communication</li>
+                            <li>Client calls and email writing</li>
+                            <li>Sprint meetings and standups</li>
+                            <li>Code review discussions</li>
+                            <li>Technical presentations</li>
+                            <li>Bug reports and documentation</li>
+                            <li>Pronunciation training for non-native speakers</li>
+                        </ul>
+                        <div class="program-cta">
+                            <a href="#contact" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="program-card">
+                        <div class="program-header">
+                            <h3 class="program-name">Advancement</h3>
+                            <p class="program-subtitle">Career Growth & Leadership</p>
+                        </div>
+                        <ul class="program-features">
+                            <li>Everything in Essentials, plus:</li>
+                            <li>CV and LinkedIn profile review and updating</li>
+                            <li>LinkedIn network growth strategies</li>
+                            <li>Interview preparation with varying difficulty levels</li>
+                            <li>AI avatars and role-play practice</li>
+                            <li>Worst-case scenario training for high-pressure interviews</li>
+                            <li>Senior-level communication for executive interactions</li>
+                            <li>Explaining technical concepts to non-technical stakeholders</li>
+                        </ul>
+                        <div class="program-cta">
+                            <a href="#contact" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="background" class="background">
+            <div class="container">
+                <div class="background-content">
+                    <h2 class="section-title">Professional Background</h2>
+                    <div class="background-grid">
+                        <div class="background-item">
+                            <h3>Technical Experience</h3>
+                            <ul>
+                                <li>Built responsive websites for global FMCG brands and automotive dealerships</li>
+                                <li>Designed conversion-focused email campaigns using MJML, Klaviyo, and GoHighLevel</li>
+                                <li>Implemented CRM automation workflows via Zapier</li>
+                                <li>Produced business reports using SQL Server and SSRS</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="background-item">
+                            <h3>Teaching Experience</h3>
+                            <ul>
+                                <li>Delivered agency-wide website demonstrations</li>
+                                <li>Mentored junior developers and interns</li>
+                                <li>Created technical documentation and tutorials</li>
+                                <li>Conducted cross-departmental communication training</li>
+                                <li>Presented client-facing demonstrations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="background-item">
+                            <h3>Education & Credentials</h3>
+                            <ul>
+                                <li>TEFL Certified</li>
+                                <li>Bachelor's Degree, Information Technology</li>
+                                <li>Systematic Theology Certification</li>
+                                <li>10+ years in web development, email systems, CRM automation, and business intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="final-cta">
+            <div class="container">
+                <div class="final-cta-content">
+                    <h2>Ready to Advance Your Career?</h2>
+                    <p>I have been in your retrospectives. I have explained bugs to angry clients. I have led the standups you are nervous about. Now let me help you master the communication skills that will set you apart.</p>
+                    <a href="mailto:contact@timveck.com" class="btn btn-primary">Get Started Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TimVeck - IT Business English Training. All rights reserved.</p>
+            <p class="footer-contact">Durban, KwaZulu-Natal, South Africa | Remote Training Available</p>
+        </div>
+    </footer>
+</body>
+</html>
